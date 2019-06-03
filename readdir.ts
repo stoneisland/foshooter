@@ -49,4 +49,3 @@ export const readdirRecursively = (dir: string, predicate?: (path: string) => bo
     map(v => v.path),
     filter(predicate || (_ => true))
 )
-
