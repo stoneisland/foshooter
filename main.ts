@@ -28,17 +28,17 @@ const argv = yargs
 const from = argv.in || '.';
 const to = argv.out || '.'
 
-function publish(fromDir: string, toDir: string) {
+function publish(from: string, to: string) {
 
-  readdirRecursively(fromDir, jpgFilter).pipe(map(v => transform(v)), flatMap(v => v))
+  readdirRecursively(from, jpgFilter).pipe(map(v => transform(v)), flatMap(v => v))
     .subscribe(
       v => {
         console.log(v.path);
         //Handle errors
-        const dir = join(toDir, relative(fromDir, dirname(v.path)));
+        const dir = join(to, relative(from, dirname(v.path)));
         mkdirp(dir, () => {
           //TODO Handle error
-          writeFile(join(toDir, basename(v.path)), v.buffer, function () { });
+          writeFile(join(to, basename(v.path)), v.buffer, function () { });
         });
       }
     );
