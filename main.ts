@@ -42,7 +42,7 @@ let saveToFileSystem = v => {
 };
 */
 
-function publish(from: string, to?: string) {
+export function publish(from: string, to?: string) {
 
   const s3 = new S3({
     accessKeyId: process.env.accessKeyId,
@@ -76,4 +76,4 @@ function publish(from: string, to?: string) {
 }
 
 //publish(from, to);
-publish(from);
+//publish(from);
