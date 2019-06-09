@@ -1,4 +1,4 @@
-import { extname } from 'path';
+import { extname } from 'upath';
 
 const JPG_EXT = '.JPG';
 const JPEG_EXT = '.JPEG';

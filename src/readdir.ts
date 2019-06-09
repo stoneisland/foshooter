@@ -1,5 +1,5 @@
 import { Dirent, readdir } from 'fs';
-import { join } from 'path';
+import { join } from 'upath';
 import { bindNodeCallback, empty, Observable, of } from 'rxjs';
 import { expand, filter, flatMap, map } from 'rxjs/operators';
 

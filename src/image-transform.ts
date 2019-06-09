@@ -1,4 +1,4 @@
-import { basename, dirname, join, parse } from 'path';
+import { basename, dirname, join, parse } from 'upath';
 import { Observable, of } from 'rxjs';
 import { flatMap, map } from 'rxjs/operators';
 import { blur, resize } from './jpg-transform';

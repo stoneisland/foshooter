@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'fs';
 import * as mkdirp from 'mkdirp';
-import { dirname } from 'path';
+import { dirname } from 'upath';
 import { bindNodeCallback } from 'rxjs';
 
 export const saveFile = (path: string, buffer: Buffer) => {

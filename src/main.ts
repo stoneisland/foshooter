@@ -1,11 +1,11 @@
-import { join, relative } from 'path';
+import { join, relative } from 'upath';
 import { flatMap, map } from 'rxjs/operators';
 import { readFileObservable, saveFile } from './fs-storage';
 import { transform } from './image-transform';
 import { jpgFilter } from './jpg-filter';
 import { readdirRecursively } from './readdir';
 
-export function process(fromDir = '.', to = 'out') {
+export function process(fromDir: string, to: string) {
   readdirRecursively(fromDir, jpgFilter)
     .pipe(
       map((path: string) =>
@@ -20,6 +20,7 @@ export function process(fromDir = '.', to = 'out') {
     )
     .subscribe(item => {
       const toPath = join(to, relative(fromDir, item.path));
+      console.log(toPath);
       saveFile(toPath, item.buffer);
     });
 }
