@@ -4,6 +4,9 @@
   "description": "Read recursively a directory tree and invoking a callback for every entry",
   "main": "lib/main.js",
   "types": "lib",
+  "bin": {
+    "foshooter": ".bin/foshooter.js"
+  },
   "scripts": {
     "test": "jest --config jestconfig.json",
     "start": "node lib/cli.js",
