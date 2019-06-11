@@ -1,7 +1,4 @@
-import { config } from 'dotenv';
 import * as yargs from 'yargs';
-
-config({ path: '.env' });
 
 // Default from environment?
 
