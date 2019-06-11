@@ -9,10 +9,10 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/dist/main.js",
+            "program": "${workspaceFolder}/lib/cli.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "outFiles": [
-                "${workspaceFolder}/dist/**/*.js"
+                "${workspaceFolder}/lib/**/*.js"
             ]
         }
     ]
