@@ -1,7 +1,7 @@
 import { Dirent, readdir } from 'fs';
-import { join } from 'upath';
 import { bindNodeCallback, empty, Observable, of } from 'rxjs';
 import { expand, filter, flatMap, map } from 'rxjs/operators';
+import { join } from 'upath';
 
 /**
  *  @param dir true if the node represents a directory

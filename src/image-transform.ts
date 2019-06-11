@@ -1,6 +1,6 @@
-import { basename, dirname, join, parse } from 'upath';
 import { Observable, of } from 'rxjs';
 import { flatMap, map } from 'rxjs/operators';
+import { basename, dirname, join, parse } from 'upath';
 import { blur, resize } from './jpg-transform';
 
 const HD = 'HD';

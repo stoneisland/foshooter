@@ -8,15 +8,15 @@ const argv = yargs
   .usage('Usage: node $0 [in] [out]')
   .option('in', {
     alias: 'i',
+    default: '.',
     description: 'Input Folder',
     type: 'string',
-    default: '.'
   })
   .option('out', {
     alias: 'o',
+    default: 'out',
     description: 'Destination',
     type: 'string',
-    default: 'out'
   }).argv;
 
 process(argv.in, argv.out);

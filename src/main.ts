@@ -1,5 +1,5 @@
-import { join, relative } from 'upath';
 import { flatMap, map } from 'rxjs/operators';
+import { join, relative } from 'upath';
 import { readFileObservable, saveFile } from './fs-storage';
 import { transform } from './image-transform';
 import { jpgFilter } from './jpg-filter';
@@ -20,7 +20,7 @@ export function process(fromDir: string, to: string) {
     )
     .subscribe(item => {
       const toPath = join(to, relative(fromDir, item.path));
-      console.log(toPath);
+      // console.log("Saving to: " + toPath);
       saveFile(toPath, item.buffer);
     });
 }
