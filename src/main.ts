@@ -27,7 +27,7 @@ function process(fromDir: string, to: string) {
     });
 }
 
-export function run(){
+export function run(fromDir = argv.in, to = argv.out) {
 
-  process(argv.in, argv.out);
+  process(fromDir, to);
 }
