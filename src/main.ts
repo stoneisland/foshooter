@@ -3,6 +3,7 @@ import { join, relative } from 'upath';
 import { readFileObservable, saveFile } from './fs-storage';
 import { transform } from './image-transform';
 import { jpgFilter } from './jpg-filter';
+import { logger } from './logger';
 import { readdirRecursively } from './readdir';
 
 export function process(fromDir: string, to: string) {
@@ -20,7 +21,7 @@ export function process(fromDir: string, to: string) {
     )
     .subscribe(item => {
       const toPath = join(to, relative(fromDir, item.path));
-      // console.log("Saving to: " + toPath);
+      logger.info("Saving to: " + toPath);
       saveFile(toPath, item.buffer);
     });
 }
