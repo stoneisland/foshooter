@@ -1,12 +1,13 @@
 import { flatMap, map } from 'rxjs/operators';
 import { join, relative } from 'upath';
+import { argv } from './cli';
 import { readFileObservable, saveFile } from './fs-storage';
 import { transform } from './image-transform';
 import { jpgFilter } from './jpg-filter';
 import { logger } from './logger';
 import { readdirRecursively } from './readdir';
 
-export function process(fromDir: string, to: string) {
+function process(fromDir: string, to: string) {
   readdirRecursively(fromDir, jpgFilter)
     .pipe(
       map((path: string) =>
@@ -24,4 +25,9 @@ export function process(fromDir: string, to: string) {
       logger.info("Saving to: " + toPath);
       saveFile(toPath, item.buffer);
     });
+}
+
+export function run(){
+
+  process(argv.in, argv.out);
 }

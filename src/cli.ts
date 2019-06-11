@@ -1,10 +1,11 @@
 import { config } from 'dotenv';
-import yargs = require('yargs');
-import { process } from './main';
+import * as yargs from 'yargs';
 
 config({ path: '.env' });
 
-const argv = yargs
+// Default from environment?
+
+export const argv = yargs
   .usage('Usage: node $0 [in] [out]')
   .option('in', {
     alias: 'i',
@@ -18,5 +19,3 @@ const argv = yargs
     description: 'Destination',
     type: 'string',
   }).argv;
-
-process(argv.in, argv.out);
