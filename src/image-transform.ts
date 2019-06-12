@@ -6,7 +6,7 @@ import { blur, resize } from './jpg-transform';
 const HD = 'HD';
 const sigma = 20;
 const BLUR_SUFFIX = '_Blur';
-const SIZES$ = of(256, 512, 640, 1024);
+const SIZES$ = of(256, 320, 512, 640, 1024, 1280, 2048, 2560);
 
 function blurBaseName(path: string) {
   const parsed = parse(path);
