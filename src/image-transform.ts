@@ -4,7 +4,7 @@ import { basename, dirname, join, parse } from 'upath';
 import { blur, resize } from './jpg-transform';
 
 const HD = 'HD';
-const sigma = 15;
+const sigma = 20;
 const BLUR_SUFFIX = '_Blur';
 const SIZES$ = of(256, 512, 640, 1024);
 
