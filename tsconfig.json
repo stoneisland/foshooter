@@ -7,6 +7,10 @@
     "strict": true,
     "sourceMap": true
   },
-  "include": ["src", "tsconfig.json", "test.ts"],
-  "exclude": ["node_modules", "**/__tests__/*"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/__tests__/*"
+  ]
 }
