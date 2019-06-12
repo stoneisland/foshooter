@@ -25,9 +25,12 @@ export const transform = (item: { path: string; buffer: Buffer }): Observable<{ 
     ),
     flatMap(i => i),
     map(i =>
-      SIZES$.pipe(
-        map(size => resizeWrapper(size)(dirname(i.path))),
-        map(r => of(of(i), r(i))),
+      of(
+        SIZES$.pipe(
+          map(size => resizeWrapper(size)(dirname(i.path))),
+          map(r => r(i)),
+        ),
+        of(of(i))
       ),
     ),
     flatMap(i$$ => i$$),
