@@ -1,3 +1,6 @@
-import { process } from './src/main';
+import { handle } from './src/main';
+import { logger } from './src/logger';
 
-process('test', 'out');
+handle('test', 'out');
+
+logger.log('info',  `Env: ${process.env.accessKeyId}`);

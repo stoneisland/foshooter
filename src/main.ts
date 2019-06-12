@@ -6,7 +6,7 @@ import { jpgFilter } from './jpg-filter';
 import { logger } from './logger';
 import { readdirRecursively } from './readdir';
 
-export function process(fromDir: string, to: string) {
+export function handle(fromDir: string, to: string) {
   readdirRecursively(fromDir, jpgFilter)
     .pipe(
       map((path: string) =>
