@@ -48,7 +48,7 @@
   "dependencies": {
     "@types/mkdirp": "^0.5.2",
     "@types/yargs": "^13.0.0",
-    "aws-sdk": "^2.466.0",
+    "aws-sdk": "^2.814.0",
     "dotenv": "^8.0.0",
     "mkdirp": "^0.5.1",
     "rxjs": "^6.5.2",
